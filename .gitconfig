@@ -1,0 +1,190 @@
+# Add to ~/.gitconfig file
+
+[alias]
+    # Add
+    a = add
+    ai = add --interactive
+
+    # Branch
+    b = branch
+    ba = branch --all
+    bav = branch --all --verbose
+    bd = branch --delete
+    bdd = branch -D
+    bm = branch --move
+    bmm = branch -M
+    br = branch --remotes
+
+    # Commit
+    c = commit
+    ca = commit --all
+    cm = commit -m
+    cam = commit -am
+    cem = commit --allow-empty -m
+    cd = commit --amend
+    cad = commit --all --amend
+    cadne = commit --all --amend --no-edit
+
+    # Clone
+    cl = clone
+    cld = clone --depth 1
+
+    # Cherry-pick
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+    cps = cherry-pick --skip
+
+    # Diff
+    d = diff
+    di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+    dt = difftool
+
+    # Fetch
+    f = fetch
+    fo = fetch origin
+    fu = fetch upstream
+
+    # Fsck
+    fk = fsck
+
+    # Grep
+    g = grep -p
+
+    # Log
+    l = log --oneline
+    lg = log --oneline --graph --decorate
+    lgs = !"git log --pretty=format:'%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --date=short"
+    lgc = !"git log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --numstat"
+    lgt = !"git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+
+    # List files
+    ls = ls-files
+    lsm = ls-files --modified
+    lss = ls-files --stage
+
+    # Merge
+    m = merge
+    ma = merge --abort
+    mc = merge --continue
+    mq = merge --quit
+    mm = merge master
+
+    # Checkout
+    o = checkout
+    om = checkout master
+    ob = checkout -b
+
+    # Switch
+    sw = switch
+    swb = switch -c
+    swd = switch --detach
+
+    # Prune
+    pr = prune --verbose --progress
+    prn = prune --dry-run
+
+    # Push
+    ps = push
+    psa = push --all
+    psf = push --force
+    psu = push --set-upstream
+    pso = push origin
+    psao = push --all origin
+    psfo = push --force origin
+    psuo = push --set-upstream origin
+    psom = push origin master
+    psaom = push --all origin master
+    psfom = push --force origin master
+    psuom = push --set-upstream origin master
+
+    # Pull
+    pl = pull
+    plr = pull --rebase
+    plv = pull --verbose
+    plo = pull origin
+    plro = pull --rebase origin
+    plom = pull origin master
+    plu = pull upstream
+    plum = pull upstream master
+    plrum = pull --rebase upstream master
+
+    # Rebase
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase --interactive
+    rbs = rebase --skip
+    rbin = "!r() { git rebase -i HEAD~$1; }; r"
+
+    # Reset
+    re = reset
+    rh = reset HEAD
+    reh = reset --hard
+    rem = reset --mixed
+    res = reset --soft
+    rehh = reset --hard HEAD
+    remh = reset --mixed HEAD
+    resh = reset --soft HEAD
+    rehom = reset --hard origin/master
+
+    # Remote
+    r = remote
+    ra = remote add
+    rr = remote remove
+    rv = remote --verbose
+    rn = remote rename
+    rp = remote prune
+    rs = remote show
+    rao = remote add origin
+    rau = remote add upstream
+    rro = remote remove origin
+    rru = remote remove upstream
+    rso = remote show origin
+    rsu = remote show upstream
+    rpo = remote prune origin
+    rpu = remote prune upstream
+
+    # Remove
+    rmf = rm -f
+    rmrf = rm -r -f
+
+    # Status
+    s = status
+    sb = status -s -b
+
+    # Stash
+    sa = stash apply
+    sc = stash clear
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    sps = stash push
+    spsk = stash push -k
+    ss = stash show
+    st = !git stash list | wc -l 2>/dev/null | grep -oEi '[0-9][0-9]*'
+
+    # Tag
+    t = tag
+    td = tag --delete
+    tl = tag --list
+
+    # Show
+    w = show
+    wo = show --oneline
+    wf = show --format=fuller
+
+    # Utility
+    aliases = !git config -l | grep alias | cut -c 7-
+    branches = branch --all
+    remotes = remote --verbose
+    contributors = shortlog --summary --numbered
+    amend = commit --amend --no-edit
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+    fb = "!f() { git branch -a --contains $1; }; f"
+    ft = "!f() { git describe --always --contains $1; }; f"
+    fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  
+  # credits: https://tjay.dev/howto-my-terminal-shell-setup-hyper-js-zsh-starship/
