@@ -7,8 +7,6 @@ mouse-hide-while-typing=true
 copy-on-select = clipboard
 adjust-cell-height=25%
 
-font-size=10
-
 # keybindings
 keybind = control+b>r=reload_config
 keybind = control+b>s=close_surface
