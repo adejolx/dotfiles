@@ -8,6 +8,9 @@ export ZSH="$HOME/.zsh"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
 
+export CDPATH=".:$HOME/Projects:$HOME/.config"
+
+
 # Better history behavior
 HISTSIZE=100000
 SAVEHIST=100000
