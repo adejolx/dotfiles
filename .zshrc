@@ -8,7 +8,8 @@ export ZSH="$HOME/.zsh"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
 
-export CDPATH=".:$HOME/Projects:$HOME/.config"
+# CDPATH lets you cd into subdirectories of listed paths from anywhere, e.g. `cd myproject` works without full path
+export CDPATH=".:$HOME/Projects"
 
 
 # Better history behavior
