@@ -1,0 +1,40 @@
+# Add to ~/.config/ghostty/config.ghostty file
+
+cursor-text=#fff
+adjust-cursor-thickness=50%
+cursor-color=#ff0054
+mouse-hide-while-typing=true
+copy-on-select = clipboard
+adjust-cell-height=25%
+
+font-size=10
+
+# keybindings
+keybind = control+b>r=reload_config
+keybind = control+b>s=close_surface
+keybind = control+b>q=close_tab
+keybind = control+b>c=new_tab
+keybind = control+b>n=next_tab
+keybind = control+b>p=previous_tab
+keybind = control+b>[=move_tab:-1
+keybind = control+b>]=move_tab:1
+keybind = control+b>comma=prompt_surface_title
+keybind = control+b>\=new_split:right
+keybind = control+b>-=new_split:down
+keybind = control+b>j=goto_split:bottom
+keybind = control+b>k=goto_split:top
+keybind = control+b>h=goto_split:left
+keybind = control+b>l=goto_split:right
+keybind = control+b>z=toggle_split_zoom
+keybind = control+b>e=equalize_splits
+
+# quick tab switch
+keybind = control+b>1=goto_tab:1
+keybind = control+b>2=goto_tab:2
+keybind = control+b>3=goto_tab:3
+keybind = control+b>4=goto_tab:4
+keybind = control+b>5=goto_tab:5
+keybind = control+b>6=goto_tab:6
+keybind = control+b>7=goto_tab:7
+keybind = control+b>8=goto_tab:8
+keybind = control+b>9=goto_tab:9
