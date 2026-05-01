@@ -1,4 +1,4 @@
-# Add to ~/.config/ghostty/config.ghostty file
+# Add to ~/.config/ghostty/config file
 
 cursor-text=#fff
 adjust-cursor-thickness=50%
